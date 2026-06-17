@@ -29,6 +29,7 @@ body {
     --bg-lighter: #f3f4f6;
     --border-color: #e5e7eb;
     --white: #ffffff;
+    --nav-link-hover-color: #60a5fa;
 }
 
 /* ===================================
@@ -38,6 +39,7 @@ body {
 .navbar {
     background: rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 .logo-section {
@@ -49,6 +51,11 @@ body {
 .logo-img {
     height: 2.5rem;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.navbar.scrolled .logo-img {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .nav-menu {
@@ -63,10 +70,11 @@ body {
     font-size: 0.875rem;
     transition: color 0.3s ease;
     position: relative;
+    font-weight: 500;
 }
 
 .nav-link:hover {
-    color: #60a5fa;
+    color: var(--nav-link-hover-color);
 }
 
 .nav-link::after {
@@ -76,7 +84,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #60a5fa;
+    background: var(--nav-link-hover-color);
     transition: width 0.3s ease;
 }
 
