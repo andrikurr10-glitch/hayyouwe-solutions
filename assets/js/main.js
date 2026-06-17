@@ -71,15 +71,46 @@ if (filterButtons.length > 0) {
     });
 }
 
-// Navbar scroll effect
+// Navbar scroll effect with dynamic text color
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const getInTouchBtn = document.querySelector('.btn-primary');
+    const logoImg = document.querySelector('.logo-img');
+    const logoText = document.querySelector('.logo-section h1');
+
     if (window.scrollY > 100) {
+        // Scrolled state
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
         navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+        
+        // Change text color to dark
+        navLinks.forEach(link => {
+            link.style.color = '#1f2937';
+        });
+        navLinks.forEach(link => {
+            link.style.setProperty('--nav-link-hover-color', '#2563eb');
+        });
+        logoText.style.color = '#1f2937';
+        
+        // Update button style
+        getInTouchBtn.style.background = '#2563eb';
+        getInTouchBtn.style.borderColor = '#2563eb';
     } else {
+        // Top state
         navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+        navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
         navbar.style.boxShadow = 'none';
+        
+        // Change text color back to white
+        navLinks.forEach(link => {
+            link.style.color = '#ffffff';
+        });
+        logoText.style.color = '#ffffff';
+        
+        // Reset button style\n        getInTouchBtn.style.background = '#2563eb';
+        getInTouchBtn.style.borderColor = '#2563eb';
     }
 });
 
