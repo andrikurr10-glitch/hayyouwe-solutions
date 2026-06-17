@@ -76,11 +76,11 @@ window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const getInTouchBtn = document.querySelector('.btn-primary');
-    const logoImg = document.querySelector('.logo-img');
-    const logoText = document.querySelector('.logo-section h1');
+    const logoText = document.querySelector('.logo-text');
 
     if (window.scrollY > 100) {
         // Scrolled state
+        navbar.classList.add('scrolled');
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
         navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
@@ -89,9 +89,6 @@ window.addEventListener('scroll', function () {
         navLinks.forEach(link => {
             link.style.color = '#1f2937';
         });
-        navLinks.forEach(link => {
-            link.style.setProperty('--nav-link-hover-color', '#2563eb');
-        });
         logoText.style.color = '#1f2937';
         
         // Update button style
@@ -99,6 +96,7 @@ window.addEventListener('scroll', function () {
         getInTouchBtn.style.borderColor = '#2563eb';
     } else {
         // Top state
+        navbar.classList.remove('scrolled');
         navbar.style.background = 'rgba(255, 255, 255, 0.1)';
         navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
         navbar.style.boxShadow = 'none';
@@ -109,7 +107,8 @@ window.addEventListener('scroll', function () {
         });
         logoText.style.color = '#ffffff';
         
-        // Reset button style\n        getInTouchBtn.style.background = '#2563eb';
+        // Reset button style
+        getInTouchBtn.style.background = '#2563eb';
         getInTouchBtn.style.borderColor = '#2563eb';
     }
 });
