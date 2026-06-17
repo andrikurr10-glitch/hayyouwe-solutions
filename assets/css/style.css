@@ -597,7 +597,6 @@ body {
 
 .contact-info-grid {
     margin-top: 3rem;
-    space-y: 2rem;
 }
 
 .contact-info-item {
@@ -738,8 +737,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     display: flex;
-    flex-direction: column;
-    md:flex-direction: row;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-size: 0.875rem;
@@ -749,7 +747,6 @@ body {
 .footer-bottom-links {
     display: flex;
     gap: 2rem;
-    margin-top: 1rem;
 }
 
 .footer-bottom-links a {
