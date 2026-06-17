@@ -23,11 +23,11 @@ if (contactForm) {
         e.preventDefault();
 
         // Get form data
-        const formData = new FormData(this);
+        const inputs = this.querySelectorAll('input, textarea');
         const data = {
-            name: formData.get('name') || document.querySelector('input[placeholder="Masukkan nama Anda"]').value,
-            email: formData.get('email') || document.querySelector('input[placeholder="Masukkan email Anda"]').value,
-            message: formData.get('message') || document.querySelector('textarea[placeholder="Jelaskan proyek Anda..."]').value
+            name: inputs[0].value,
+            email: inputs[1].value,
+            message: inputs[2].value
         };
 
         // Validate form
